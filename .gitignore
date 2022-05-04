@@ -1,0 +1,16 @@
+vietTTS/assets/infore/
+
+tts-venv
+test-tts-venv
+validate-venv
+
+audio/*
+
+__pycache__
+
+hello.mp3
+vietTTS/clip.wav
+vietTTS/hello.mp3
+vietTTS/LICENSE
+
+.git/
