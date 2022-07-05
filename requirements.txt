@@ -3,4 +3,8 @@ jaxlib==0.3.7
 jax==0.3.7
 dm-haiku==0.0.6
 sanic==22.3.1
-soundfile
+soundfile==0.10.3.post1
+
+# # for lib: requests, used to send requests to sanic service, docker image does not need these libs
+# idna==3.3
+# certifi==2022.6.15
