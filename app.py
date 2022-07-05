@@ -1,5 +1,5 @@
 import os
-import time
+
 from sanic import Sanic
 import soundfile as sf
 from sanic.response import json
@@ -7,10 +7,6 @@ from sanic.response import json
 from vietTTS.vietTTS.synthesizer import nat_normalize_text, text2mel, mel2wave
 
 app = Sanic("TTS-Server")
-
-@app.route('/test', methods=['GET'])
-async def hi(request):
-    print("hi")
 
 @app.route('/to-speech', methods=['POST'])
 async def text_to_speech(request):
@@ -33,18 +29,10 @@ async def text_to_speech(request):
 
 def model_infere(text, lexicon_file, silence_duration, output, sample_rate):
     text =  nat_normalize_text(text)
-    print("\n\nNormalized text input:", text)
-    start = time.time()
+    
     mel =  text2mel(text, lexicon_file, silence_duration)
-    end = time.time()
-    print("\ntext2mel took: ", end - start)
-
-    start = time.time()
+    
     wave =  mel2wave(mel)
-    end = time.time()
-    print("\nmel2wave took: ", end - start)
-
-    print("\nwriting output to file", output, "\n\n")
     sf.write(str(output), wave, samplerate=sample_rate)
 
 if __name__ == '__main__':
