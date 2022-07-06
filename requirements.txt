@@ -5,6 +5,9 @@ dm-haiku==0.0.6
 sanic==22.3.1
 soundfile==0.10.3.post1
 
+# # this library (not needed for docker image) is used in models preparation steps (section II in README)
+# torch==1.11.0
+
 # # for lib: requests, used to send requests to sanic service, docker image does not need these libs
 # idna==3.3
 # certifi==2022.6.15
