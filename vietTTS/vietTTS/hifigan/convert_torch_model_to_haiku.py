@@ -58,7 +58,7 @@ def convert_to_haiku(a, h, device):
                 hk_map[a]["w"] = b.numpy()
 
     FLAGS.ckpt_dir.mkdir(parents=True, exist_ok=True)
-    with open(FLAGS.ckpt_dir / "hk_hifi.pickle", "wb") as f:
+    with open("./assets/infore/hifigan/hk_hifi.pickle", "wb") as f:
         pickle.dump(hk_map, f)
 
 
