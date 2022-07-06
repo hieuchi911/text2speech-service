@@ -2,7 +2,7 @@ FROM python:3.8-slim-buster
 
 WORKDIR /python-docker
 
-COPY requirements.txt requirements.txt
+COPY . .
 
 # Change back to root user to install dependencies
 USER root
@@ -10,6 +10,8 @@ USER root
 RUN apt-get update -y && apt-get --yes install libsndfile1
 
 RUN pip3 install -r requirements.txt
+
+RUN mkdir audio/ && chmod -R 770 audio/
 
 RUN adduser --disabled-password --gid 0 ctgroup && passwd -d ctgroup
 

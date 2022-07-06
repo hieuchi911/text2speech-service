@@ -1,0 +1,12 @@
+audio/
+
+*-venv/
+
+__pycache__/
+
+.git/
+.gitignore
+
+README.md
+
+test-sanic-service.ipynb
